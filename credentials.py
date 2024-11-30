@@ -1,1 +1,1 @@
-credentials = {"user_ud" : "YOUR_USER_ID"}
+credentials = {"user_id" : "NMBU - IVAR_HOLMLUND_GMGI221"}
