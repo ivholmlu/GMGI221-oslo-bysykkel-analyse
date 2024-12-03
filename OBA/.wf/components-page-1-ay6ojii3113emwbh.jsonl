@@ -1,8 +1,0 @@
-{"id": "ay6ojii3113emwbh", "type": "page", "content": {}, "handlers": {}, "isCodeManaged": false, "parentId": "root", "position": 1}
-{"id": "h617jrlhlwatg5m4", "type": "sidebar", "content": {}, "handlers": {}, "isCodeManaged": false, "parentId": "ay6ojii3113emwbh", "position": -2}
-{"id": "ho2vd6w03dqefotc", "type": "button", "content": {"text": "Button Text"}, "handlers": {}, "isCodeManaged": false, "parentId": "h617jrlhlwatg5m4", "position": 0}
-{"id": "bo3eg1m2238svj5k", "type": "heading", "content": {"alignment": "center", "headingType": "h1", "text": "Something here"}, "handlers": {}, "isCodeManaged": false, "parentId": "ay6ojii3113emwbh", "position": 0}
-{"id": "hpl9jsnddhoerr41", "type": "columns", "content": {}, "handlers": {}, "isCodeManaged": false, "parentId": "ay6ojii3113emwbh", "position": 1}
-{"id": "myy5c3n2tlpnleaa", "type": "column", "content": {"width": "2"}, "handlers": {}, "isCodeManaged": false, "parentId": "hpl9jsnddhoerr41", "position": 0}
-{"id": "sr44pctn5l10twjv", "type": "mapbox", "content": {"accessToken": "pk.eyJ1IjoiaXZob2xtbHUiLCJhIjoiY2x3NG5uMjJkMTl0cjJqbnY3cnlnZXNwbSJ9.963JftlcHaGkvMaaTSiGSQ", "markers": "[\n  {\n    \"lat\": 37.79322359164316,\n    \"lng\": -122.39999318828129,\n    \"name\": \"Marker\"\n  }\n]"}, "handlers": {}, "isCodeManaged": false, "parentId": "myy5c3n2tlpnleaa", "position": 0}
-{"id": "iecf1c6x35evogww", "type": "column", "content": {"width": "1"}, "handlers": {}, "isCodeManaged": false, "parentId": "hpl9jsnddhoerr41", "position": 1}

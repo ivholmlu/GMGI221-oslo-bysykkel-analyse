@@ -1,1 +1,1 @@
-credentials = {"user_id" : "NMBU - IVAR_HOLMLUND_GMGI221"}
+credentials = {"user_id" : "NMBU - IVAR_HOLMLUND_GMGI221", "mapbox_token" : "pk.eyJ1IjoiaXZob2xtbHUiLCJhIjoiY2x3NG5uMjJkMTl0cjJqbnY3cnlnZXNwbSJ9.963JftlcHaGkvMaaTSiGSQ"}

@@ -1,57 +1,38 @@
 import writer as wf
-import plotly.express as px
-from bysykkel_api import get_all_stations
+from mapbox_func import set_up_map, highlight_area
+from plotting import generate_bike_stat, generate_area_stat, generate_stat_avg_
 from credentials import credentials
-import plotly.express as px
-import pandas as pd
-# This is a placeholder to get you started or refresh your memory.
-# Delete it or adapt it as necessary.
-# Documentation is available at https://dev.writer.com/framework
+from processing import load_arealer_gdf, load_stations_gdf, match_stations_and_availability, load_availability_gdf
 
-# Shows in the log when the app starts
-print("Hello world!")
-
-# Its name starts with _, so this function won't be exposed
-def _update_message(state):
-    is_even = state["counter"] % 2 == 0
-    message = ("+Even" if is_even else "-Odd")
-    state["message"] = message
-
-def _set_up_map(state):
-
-    _headers = {
-        "Client-Identifier": credentials["user_id"]
+_headers = {
+    "Client-Identifier": credentials["user_id"]
     }
-    response = get_all_stations(_headers)
-    stations = response['data']['stations']
 
-    df = pd.DataFrame(stations)
+def _state_set_up_map(state):
+    arealer_gdf = load_arealer_gdf()
+    stations_gdf = load_stations_gdf()
+    availability_gdf = load_availability_gdf(_headers)
+    stations_gdf = match_stations_and_availability(stations_gdf, availability_gdf)
+    state["bike_map"] = set_up_map(arealer_gdf, stations_gdf)
 
-    fig = px.scatter_mapbox(
-        df,
-        lat="lat",
-        lon="lon",
-        zoom=13,
-        center={"lat": 59.9139, "lon": 10.7522},  # Oslo coordinates
-        title="Bike Sharing Stations"
-    )
+def _set_up_plots(state):
+    arealer_gdf = load_arealer_gdf()
+    stations_gdf = load_stations_gdf()
+    availability_gdf = load_availability_gdf(_headers)
+    stations_gdf = match_stations_and_availability(stations_gdf, availability_gdf)
+    state["bike_stat"] = generate_bike_stat(stations_gdf, arealer_gdf)
+    state["area_stat"] = generate_area_stat(arealer_gdf)
+    state["stat_avg"] = generate_stat_avg_(arealer_gdf)
 
-    state["bike_map"] = fig
-
+def _state_highlight_area(state, selected_bydel):
+    state["bike_map"] = highlight_area(state["arealer_gdf"], state["bike_map"], selected_bydel)
     
-# Initialise the state
-
-# "_my_private_element" won't be serialised or sent to the frontend,
-# because it starts with an underscore
-
 initial_state = wf.init_state({
     "my_app": {
         "title": "MY APP"
     },
-    "_my_private_element": 1337,
-    "message": None,
-    "counter": 26,
 })
 
-_update_message(initial_state)
-_set_up_map(initial_state)
+_state_set_up_map(initial_state)
+_set_up_plots(initial_state)
+print("MAP")

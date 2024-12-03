@@ -1,8 +1,0 @@
-{"id": "4gub3lzg2oj23unc", "type": "page", "content": {}, "handlers": {}, "isCodeManaged": false, "parentId": "root", "position": 0}
-{"id": "wckw3mtew9bg1dkc", "type": "columns", "content": {}, "handlers": {}, "isCodeManaged": false, "parentId": "4gub3lzg2oj23unc", "position": 0}
-{"id": "2p5745tutfnt2bwu", "type": "separator", "content": {}, "handlers": {}, "isCodeManaged": false, "parentId": "wckw3mtew9bg1dkc", "position": 0}
-{"id": "mm0tbaocjfi331q1", "type": "columns", "content": {}, "handlers": {}, "isCodeManaged": false, "parentId": "4gub3lzg2oj23unc", "position": 1}
-{"id": "yznq8082tlk5rlcq", "type": "section", "content": {"title": "Section Title"}, "handlers": {}, "isCodeManaged": false, "parentId": "4gub3lzg2oj23unc", "position": 2}
-{"id": "34yap1kpemjcg77g", "type": "columns", "content": {}, "handlers": {}, "isCodeManaged": false, "parentId": "yznq8082tlk5rlcq", "position": 0}
-{"id": "gasbte34cxw5xk2s", "type": "column", "content": {"width": "1"}, "handlers": {}, "isCodeManaged": false, "parentId": "34yap1kpemjcg77g", "position": 0}
-{"id": "us4bawaan6wt6abz", "type": "plotlygraph", "content": {"spec": "@{bike_map}"}, "handlers": {}, "isCodeManaged": false, "parentId": "gasbte34cxw5xk2s", "position": 0}
