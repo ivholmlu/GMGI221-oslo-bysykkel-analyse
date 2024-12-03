@@ -34,5 +34,4 @@ initial_state = wf.init_state({
 })
 
 _state_set_up_map(initial_state)
-_set_up_plots(initial_state)
-print("MAP")
+#_set_up_plots(initial_state)
